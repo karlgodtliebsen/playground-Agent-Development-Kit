@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "playground-agent-development-kit"
+version = "0.1.0"
+description = "A playground environment for experimenting with Google Agent Development Kit"
+readme = "README.md"
+authors = [
+    {name = "Karl Godtliebsen", email = "karl@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "google-cloud-aiplatform>=1.35.0",
+    "google-cloud-dialogflow>=2.24.0",
+    "google-cloud-storage>=2.10.0",
+    "google-auth>=2.23.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "pydantic>=2.4.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "structlog>=23.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.9.0",
+    "flake8>=6.1.0",
+    "mypy>=1.6.0",
+]
+ai = [
+    "openai>=1.0.0",
+    "langchain>=0.1.0",
+    "langchain-google-vertexai>=1.0.0",
+    "numpy>=1.24.0",
+    "pandas>=2.1.0",
+    "scikit-learn>=1.3.0",
+]
+jupyter = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.25.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/karlgodtliebsen/playground-Agent-Development-Kit"
+Repository = "https://github.com/karlgodtliebsen/playground-Agent-Development-Kit"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short"
