@@ -2,6 +2,11 @@
 
 A playground environment for experimenting with Google Agent Development Kit (ADK). This repository provides a structured foundation for building, testing, and deploying AI agents using Google Cloud AI services, Vertex AI, and Dialogflow.
 
+## Plan
+- Look into Google Agent Development Kit (ADK)
+
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -286,3 +291,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Check the `/health` endpoint for system status
 - Review logs for detailed error messages
 - Ensure all required environment variables are set
+=======
